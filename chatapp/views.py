@@ -3,4 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def rooms(request):
-    return render(request, "home.html")
+    rooms=Room.objects.all()
+    return render(request, "home.html", {
+        "rooms": rooms
+    })
